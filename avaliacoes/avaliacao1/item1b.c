@@ -8,6 +8,8 @@ int main() {
   printf("&p: %p\n", &p);
   printf("p  &i - endereco de i: %p\n", p);
   printf("*p i - valor de i: %d\n",*p);
-
+  int deu_certo = scanf("%d", p);
+  printf("*p i - valor de i: %d\n",*p);
+  
     return 0;
   }
