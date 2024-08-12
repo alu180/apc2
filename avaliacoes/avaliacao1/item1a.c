@@ -7,7 +7,7 @@ int main() {
   p = &i;
   printf("&p: %p\n", &p);
   printf("p  &i - endereco de i: %p\n", p);
-  printf("i - valor de i: %d\n",*p);
+  printf("*p  i - valor de i: %d\n",*p);
   *p = 7;
   //printf("&i (i - novo valor de i e de: %d)\n", i);
   printf("*p i - valor de i: %d\n",*p);
