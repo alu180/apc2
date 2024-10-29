@@ -130,7 +130,6 @@ int main() {
       imagem9[x][y] = imagem[x][y];
   }
 
-
   // Exercício 1
   unsigned char *pchar2 = (unsigned char *)imagem2;
   // unsigned char *pchar2 = (unsigned char *)&imagem2[0][0];
@@ -167,26 +166,26 @@ int main() {
   unsigned char *pchar4 = (unsigned char *)imagem4;
   // insira o seu código abaixo
   // soluçao:
-  for(int lin = 0; lin < 10; lin++) {
-    for(int col = 0; col < 10; col++) {
-      if(lin == col) {
+  for (int lin = 0; lin < 10; lin++) {
+    for (int col = 0; col < 10; col++) {
+      if (lin == col) {
         // Diagonal Principal
         pchar4[(lin * 10 * 4) + (col * 4) + 1] = 255;
         pchar4[(lin * 10 * 4) + (col * 4) + 2] = 0;
         pchar4[(lin * 10 * 4) + (col * 4) + 3] = 0;
 
         // Diagonal Secundária
-        pchar4[(lin * 10 * 4) + (9*4)-(col * 4) + 1] = 255;
-        pchar4[(lin * 10 * 4) + (9*4)-(col * 4) + 2] = 0;
-        pchar4[(lin * 10 * 4) + (9*4)-(col * 4) + 3] = 0;
+        pchar4[(lin * 10 * 4) + (9 * 4) - (col * 4) + 1] = 255;
+        pchar4[(lin * 10 * 4) + (9 * 4) - (col * 4) + 2] = 0;
+        pchar4[(lin * 10 * 4) + (9 * 4) - (col * 4) + 3] = 0;
       }
     }
   }
 
   // solução b
-  for(int lin = 0; lin < 10; lin++) {
-    for(int col = 0, colf = 9; col < 10; col++, colf--) {
-      if(lin == col) {
+  for (int lin = 0; lin < 10; lin++) {
+    for (int col = 0, colf = 9; col < 10; col++, colf--) {
+      if (lin == col) {
         // Diagonal Principal
         pchar4[(lin * 10 * 4) + (col * 4) + 1] = 255;
         pchar4[(lin * 10 * 4) + (col * 4) + 2] = 0;
@@ -201,9 +200,9 @@ int main() {
   }
 
   // solução c
-  for(int lin = 0, linf = 9; lin < 10; lin++, linf--) {
-    for(int col = 0; col < 10; col++) {
-      if(lin == col) {
+  for (int lin = 0, linf = 9; lin < 10; lin++, linf--) {
+    for (int col = 0; col < 10; col++) {
+      if (lin == col) {
         // Diagonal Principal
         pchar4[(lin * 10 * 4) + (col * 4) + 1] = 255;
         pchar4[(lin * 10 * 4) + (col * 4) + 2] = 0;
@@ -218,9 +217,9 @@ int main() {
   }
 
   // solução d
-  for(int lin = 0; lin < 10; lin++) {
-    for(int col = 0; col < 10; col++) {
-      if(lin == col || lin == (10-1)-col) {
+  for (int lin = 0; lin < 10; lin++) {
+    for (int col = 0; col < 10; col++) {
+      if (lin == col || lin == (10 - 1) - col) {
         // Diagonal Principal ou secundária
         pchar4[(lin * 10 * 4) + (col * 4) + 1] = 255;
         pchar4[(lin * 10 * 4) + (col * 4) + 2] = 0;
@@ -231,146 +230,131 @@ int main() {
   // insira o seu código acima
 
   // Exercício 4
-  //unsigned char *pchar4 = (unsigned char *)imagem4;
-  // insira o seu código abaixo
-  // solução:  
-  // insira o seu código acima
-
-  // Exercício 5
-  //unsigned char *pchar5 = (unsigned char *)imagem5;
-  // insira o seu código abaixo
-  // solução:  
-  // insira o seu código acima
-  
-  // Exercício 5
   unsigned char *pchar5 = (unsigned char *)imagem5;
   // insira o seu código abaixo
   // solução:
   for (int lin = 0; lin < 10; lin++) {
-      for (int col = 0; col < 10; col++) {
-          if (lin == 0 || lin == 9 || col == 0 || col == 9) {
-              pchar5[(lin * 10 * 4) + (col * 4) + 1] = 255;
-              pchar5[(lin * 10 * 4) + (col * 4) + 2] = 0;  
-              pchar5[(lin * 10 * 4) + (col * 4) + 3] = 255;
-          }
+    for (int col = 0; col < 10; col++) {
+      if (lin == 0 || lin == 9 || col == 0 || col == 9) {
+        pchar5[(lin * 10 * 4) + (col * 4) + 1] = 255;
+        pchar5[(lin * 10 * 4) + (col * 4) + 2] = 0;
+        pchar5[(lin * 10 * 4) + (col * 4) + 3] = 255;
       }
+    }
   }
   // insira o seu código acima
-  
-  // Exercício 6
-  //unsigned char *pchar6 = (unsigned char *)imagem6;
-  // insira o seu código abaixo
-  // solução:  
-  // insira o seu código acima
 
-  // Exercício 6
+  // Exercício 5
   unsigned char *pchar6 = (unsigned char *)imagem6;
   // insira o seu código abaixo
   // solução:
-        for(int lin = 0; lin < 10; lin++) {
-          for(int col = 0; col < 10; col++) {
-            if(lin == col) {
-              pchar6[(lin * 10 * 4) + (col * 4) + 1] = 0;
-              pchar6[(lin * 10 * 4) + (col * 4) + 2] = 0;
-              pchar6[(lin * 10 * 4) + (col * 4) + 3] = 255;
-          }
-            if (lin < col) {
-              pchar6[(lin * 10 * 4) + (col * 4) + 1] = 0;   
-              pchar6[(lin * 10 * 4) + (col * 4) + 2] = 0; 
-              pchar6[(lin * 10 * 4) + (col * 4) + 3] = 255;   
-            }
-        }
+  for (int lin = 0; lin < 10; lin++) {
+    for (int col = 0; col < 10; col++) {
+      if (lin == col) {
+        pchar6[(lin * 10 * 4) + (col * 4) + 1] = 0;
+        pchar6[(lin * 10 * 4) + (col * 4) + 2] = 255;
+        pchar6[(lin * 10 * 4) + (col * 4) + 3] = 0;
       }
+      if (lin < col) {
+        pchar6[(lin * 10 * 4) + (col * 4) + 1] = 0;
+        pchar6[(lin * 10 * 4) + (col * 4) + 2] = 255;
+        pchar6[(lin * 10 * 4) + (col * 4) + 3] = 0;
+      }
+    }
+  }
+  // insira o seu código acima
+
+  // Exercício 6
+  unsigned char *pchar7 = (unsigned char *)imagem7;
+  // insira o seu código abaixo
+  // solução:
+  for (int lin = 0; lin < 10; lin++) {
+    for (int col = 0; col < 10; col++) {
+      if (lin == col) {
+        pchar7[(lin * 10 * 4) + (9 * 4) - (col * 4) + 1] = 0;
+        pchar7[(lin * 10 * 4) + (9 * 4) - (col * 4) + 2] = 0;
+        pchar7[(lin * 10 * 4) + (9 * 4) - (col * 4) + 3] = 255;
+      }
+      if (lin < col) {
+        pchar7[(lin * 10 * 4) + (9 * 4) - (col * 4) + 1] = 0;
+        pchar7[(lin * 10 * 4) + (9 * 4) - (col * 4) + 2] = 0;
+        pchar7[(lin * 10 * 4) + (9 * 4) - (col * 4) + 3] = 255;
+      }
+    }
+  }
+
   // insira o seu código acima
 
   // Exercício 7
-  unsigned char *pchar7 = (unsigned char *)imagem7;
+  unsigned char *pchar8 = (unsigned char *)imagem8;
   // insira o seu código abaixo
-  // solução:  
-              for(int lin = 0; lin < 10; lin++) {
-                for(int col = 0; col < 10; col++) {
-                  if(lin == col) {
-                    pchar7[(lin * 10 * 4) + (9*4)-(col * 4) + 1] = 0;
-                    pchar7[(lin * 10 * 4) + (9*4)-(col * 4) + 2] = 0;
-                    pchar7[(lin * 10 * 4) + (9*4)-(col * 4) + 3] = 255;
-                  }
-                  if (lin < col) {
-                    pchar7[(lin * 10 * 4) + (9*4)-(col * 4) + 1] = 0;
-                    pchar7[(lin * 10 * 4) + (9*4)-(col * 4) + 2] = 0;
-                    pchar7[(lin * 10 * 4) + (9*4)-(col * 4) + 3] = 255;
-                  }
-                }
-              }
+  // solução:
+
+  for (int lin = 0; lin < 5; lin++) {
+    for (int col = 0; col < 5; col++) {
+      if (col >= lin) {
+        pchar8[(lin * 10 * 4) + (col * 4) + 1] = 0;
+        pchar8[(lin * 10 * 4) + (col * 4) + 2] = 100;
+        pchar8[(lin * 10 * 4) + (col * 4) + 3] = 255;
+      }
+    }
+  }
+  for (int lin = 0; lin < 10; lin++) {
+    for (int col = 0; col < 10; col++) {
+      if (col >= 5 && col + lin <= 9) {
+        pchar8[(lin * 10 * 4) + (col * 4) + 1] = 0;
+        pchar8[(lin * 10 * 4) + (col * 4) + 2] = 100;
+        pchar8[(lin * 10 * 4) + (col * 4) + 3] = 255;
+      }
+    }
+  }
 
   // insira o seu código acima
 
   // Exercício 8
-  unsigned char *pchar8 = (unsigned char *)imagem8;
-  // insira o seu código abaixo
-  // solução:
-  
-  for (int lin = 0; lin < 10; lin++) {
-    for (int col = 0; col < 10; col++) {
-      // Get color values for each pixel
-      //int pixel8 = imagem8[lin][col]; // Get the pixel value from imagem8
-      int pixel7 = imagem7[lin][col];
-      int pixel6 = imagem6[lin][col];
-
-      // Check if green, blue, and alpha components are equal
-      if (((pixel7 & G)) == ((pixel6 & G)) && 
-          ((pixel7 & B)) == ((pixel6 & B)) &&
-          (pixel7 & R) == (pixel6 & R)) { 
-        // Set the pixel in imagem8 to red
-        pchar8[(lin * 10 * 4) + (col * 4) + 1] = (pixel7 & G) && (pixel6 & G);  // Red = 255
-        pchar8[(lin * 10 * 4) + (col * 4) + 2] = (pixel7 & B) && (pixel6 & B); // Green = 0
-        pchar8[(lin * 10 * 4) + (col * 4) + 3] = (pixel7 & R) && (pixel6 & R); // Blue = 0
-      }
-      }
-    }
-
-  /*for (int lin = 0; lin < 10; lin++) {
-    for (int col = 0; col < 10; col++) {
-      // Get color values for each pixel
-      int pixel7 = imagem7[lin][col];
-      int pixel6 = imagem6[lin][col];
-
-      // Check if green, blue, and alpha components are equal
-      if (((pixel7 & G)) == ((pixel6 & G)) && 
-          ((pixel7 & B)) == ((pixel6 & B)) &&
-          (pixel7 & R) == (pixel6 & R)) { 
-        // Set the pixel in imagem8 to blue
-        pchar8[(lin * 10 * 4) + (col * 4) + 1] = 0; // Red = 0
-        pchar8[(lin * 10 * 4) + (col * 4) + 2] = 0; // Green = 0
-        pchar8[(lin * 10 * 4) + (col * 4) + 3] = 0; // Blue = 255
-       }
-      }
-    }*/
-  
-
-  /*for (int lin = 0; lin < 10; lin++) {
-    for (int col = 0; col < 10; col++) {
-      // Get color values for each pixel
-      int pixel7 = imagem7[lin][col];
-      int pixel6 = imagem6[lin][col];
-      // Check if green, blue, and alpha components are equal
-      if ((pixel7 & G) >> 16) == (pixel6 & G) >> 16) && 
-          ((pixel7 & B) >> 8) == ((pixel6 & B) >> 8) &&
-          (pixel7 & R) == (pixel6 & R)) { 
-        // Keep the pixel in imagem8
-        pchar8[(lin * 10 * 4) + (col * 4) + 1] = (pixel7 & G) >> 16; 
-        pchar8[(lin * 10 * 4) + (col * 4) + 2] = (pixel7 & B) >> 8; 
-        pchar8[(lin * 10 * 4) + (col * 4) + 3] = (pixel7 & R);
-      } 
-    }
-  }*/
- 
-
-  // insira o seu código acima
-
-  // Exercício 9
   unsigned char *pchar9 = (unsigned char *)imagem9;
   // insira o seu código abaixo
-  // solução:  
+  // solução:
+
+  for (int lin = 0; lin < 10; lin++) {
+    for (int col = 0; col < 10; col++) {
+      if (col >= lin) {
+        pchar9[(lin * 10 * 4) + (col * 4) + 1] = 0;
+        pchar9[(lin * 10 * 4) + (col * 4) + 2] = 200;
+        pchar9[(lin * 10 * 4) + (col * 4) + 3] = 0;
+      }
+    }
+  }
+
+  for (int lin = 0; lin < 10; lin++) {
+    for (int col = 0; col < 10; col++) {
+      if (col + lin <= 9) {
+        pchar9[(lin * 10 * 4) + (col * 4) + 1] = 0;
+        pchar9[(lin * 10 * 4) + (col * 4) + 2] = 0;
+        pchar9[(lin * 10 * 4) + (col * 4) + 3] = 255;
+      }
+    }
+  }
+
+  for (int lin = 0; lin < 5; lin++) {
+    for (int col = 0; col < 5; col++) {
+      if (col >= lin) {
+        pchar9[(lin * 10 * 4) + (col * 4) + 1] = 0;
+        pchar9[(lin * 10 * 4) + (col * 4) + 2] = 100;
+        pchar9[(lin * 10 * 4) + (col * 4) + 3] = 255;
+      }
+    }
+  }
+  for (int lin = 0; lin < 10; lin++) {
+    for (int col = 0; col < 10; col++) {
+      if (col >= 5 && col + lin <= 9) {
+        pchar9[(lin * 10 * 4) + (col * 4) + 1] = 0;
+        pchar9[(lin * 10 * 4) + (col * 4) + 2] = 100;
+        pchar9[(lin * 10 * 4) + (col * 4) + 3] = 255;
+      }
+    }
+  }
+
   // insira o seu código acima
 
   // limpa a tela
